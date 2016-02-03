@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset ="UTF-8">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="LigaBaloncestoJ" ng-controller="jugadoresCtrl">
+
+<p>Array jugadores por apellidos:</p>
+<ul>
+  <li ng-repeat="x in jugadores | orderBy:'apellido'">
+   {{ x.nombre +', ' + x.apellido}}
+  </li>
+</ul>
+
+<p>Array jugadores por equipos:</p>
+<ul>
+  <li ng-repeat="x in jugadores | orderBy:'equipo'">
+   {{ x.nombre +', ' + x.equipo}}
+  </li>
+</ul>
+
+<p>Array jugadores por canastas:</p>
+<ul>
+  <li ng-repeat="x in jugadores | orderBy:'can'">
+   {{ x.nombre +', ' + x.can}}
+  </li>
+</ul>
+
+</div>
+
+<script>
+angular.module('LigaBaloncestoJ', []).controller('jugadoresCtrl', function($scope) {
+    $scope.jugadores = [
+        {nombre:'Sergio',apellido:'Llull', equipo: 'R.Madrid', can: 86,
+asi: 35, reb: 22},
+{nombre:'Juan Carlos',apellido:'Navarro', equipo: 'F.Barcelona', can: 77,
+asi: 29, reb: 12},
+{nombre:'Fran',apellido:'Vazquez', equipo: 'Unicaja Malaga', can: 66,
+asi: 11, reb: 44}];
+});
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset ="UTF-8">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="" ng-init="jugadores=[
+{nombre:'Sergio',apellido:'Llull', equipo: 'R.Madrid', can: 86,
+asi: 35, reb: 22},
+{nombre:'Juan Carlos',apellido:'Navarro', equipo: 'F.Barcelona', can: 77,
+asi: 29, reb: 12},
+{nombre:'Fran',apellido:'Vazquez', equipo: 'Unicaja Malaga', can: 66,
+asi: 11, reb: 44}]">
+
+<p>Array de jugadores:</p>
+<ul>
+  <li ng-repeat="x in jugadores">
+  {{ x.nombre +', ' + x.apellido +', ' + x.equipo+', ' + x.can+', ' + x.asi+', ' + x.reb }}</li>
+</ul>
+
+</div>
+
+</body>
+</html>

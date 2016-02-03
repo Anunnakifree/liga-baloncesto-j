@@ -1,0 +1,40 @@
+<style>
+    table, td  {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="LigaBaloncestoJ" ng-controller="customersCtrl">
+
+
+    <table>
+        <tr ng-repeat="x in jugadores" ng-show="x.canastasTotales >= 60">
+            <td ng-if="$odd" style="background-color:rebeccapurple">
+                {{ x.nombre }}</td>
+            <td ng-if="$even">
+                {{ x.nombre }}</td>
+             <td ng-if="$odd" style="background-color:deepskyblue">
+                {{ x.canastasTotales }}</td>
+            <td ng-if="$even">
+                {{ x.canastasTotales }}</td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+    var app = angular.module('LigaBaloncestoJ', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("api/jugadors")
+            .then(function (response) {
+                $scope.jugadores = response.data;
+            });
+    });
+</script>
+
+</body>
+</html>

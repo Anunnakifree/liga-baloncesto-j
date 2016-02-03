@@ -1,0 +1,30 @@
+    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="UTF-8">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="LigaBaloncestoJ" ng-controller="myCtrl">
+
+<p> Modifica campos estadísticos del Jugador de Baloncesto:</p>
+<p>Canastas: <input type="text" ng-model="can"></p>
+<p>Asistencias: <input type="text" ng-model="asi"></p>
+<p>Rebotes: <input type="text" ng-model="reb"></p>
+<br>
+Estadísticas completas: {{can + " " + asi + " " + reb}}
+
+</div>
+
+<script>
+var app = angular.module('LigaBaloncestoJ', []);
+app.controller('myCtrl', function($scope) {
+    $scope.can= "86";
+    $scope.asi= "35";
+    $scope.reb= "22";
+});
+</script>
+
+</body>
+</html>

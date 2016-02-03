@@ -1,0 +1,22 @@
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="LigaBaloncestoJ" ng-controller="myCtrl">
+
+<input ng-model="name">
+
+<h1>El MVP de la jornada es {{name}}</h1>
+
+</div>
+
+<script>
+var app = angular.module('LigaBaloncestoJ', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "Sergio Llull";
+});
+</script>
+
+
+</body>
+</html>
